@@ -9,7 +9,8 @@
 <body>
 <h1>Please fill the form to register!</h1>
 <br>
-First Name: <input type="text" name="fName"><br><br>
+<form action="f1">
+First Name: <input type="text" name="fName"><input type="submit" name="submit"></form><br><br>
 Last Name: <input type="text" name="lName"><br><br>
 Email: <input type="text" name="email"><br><br>
 Phone Number: <input type="text" name="phone"><br><br>
