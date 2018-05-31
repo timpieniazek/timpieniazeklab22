@@ -10,11 +10,11 @@
 <h1>Please fill the form to register!</h1>
 <br>
 <form action="f1">
-First Name: <input type="text" name="fName"><input type="submit" name="submit"></form><br><br>
-Last Name: <input type="text" name="lName"><br><br>
+First Name: <input type="text" name="firstName"><br><br>
+Last Name: <input type="text" name="lastName"><br><br>
 Email: <input type="text" name="email"><br><br>
-Phone Number: <input type="text" name="phone"><br><br>
+Phone Number: <input type="text" name="phoneNumber"><br><br>
 Password: <input type="text" name="password"><br><br>
-<input type="submit" name="submit">
+<input type="submit" name="submit"></form>
 </body>
 </html>

@@ -8,6 +8,7 @@
 </head>
 <body>
 Thank you, ${special} , for registering!
+<a href="/">Main Menu</a>
 
 </body>
 </html>

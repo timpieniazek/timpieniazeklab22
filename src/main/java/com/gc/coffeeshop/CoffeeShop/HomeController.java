@@ -1,18 +1,26 @@
 package com.gc.coffeeshop.CoffeeShop;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.gc.coffeeshop.CoffeeShop.dao.UserDAO;
+import com.gc.coffeeshop.CoffeeShop.model.Item;
+import com.gc.coffeeshop.CoffeeShop.model.User;
 
 @Controller
 public class HomeController {
 	
-	
+	@Autowired
+	private UserDAO userDAO;
 
 	@RequestMapping("/")
 	public ModelAndView index() {
-		return new ModelAndView("index", "coffee", "JAVA!");
+		List<Item> items = userDAO.findAllItems();
+		return new ModelAndView("index", "items", items);
 	}
 	
 	@RequestMapping("registration")
@@ -21,8 +29,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping("f1")
-	public ModelAndView formStuff(@RequestParam("fName") String firstName) {
-		return new ModelAndView("summary", "special", firstName);
+	public ModelAndView formStuff(User user) {
+		userDAO.addUser(user);
+		return new ModelAndView("summary", "special", user);
 	}
 	
 	@RequestMapping("/register")
